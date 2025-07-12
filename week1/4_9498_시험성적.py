@@ -17,3 +17,7 @@ else:
     output = "F"
 
 sys.stdout.write(output + "\n")
+
+# grades = {10: "A", 9: "A", 8: "B", 7: "C", 6: "D"}
+
+# print(grades.get(score, "F"))

@@ -1,4 +1,4 @@
 a, b = input().split()
-r_a = ''.join(reversed(a))
-r_b = ''.join(reversed(b))
-print(max(int(r_a), int(r_b)))
+r_a = int(a[::-1])
+r_b = int(b[::-1])
+print(max(r_a, r_b))
