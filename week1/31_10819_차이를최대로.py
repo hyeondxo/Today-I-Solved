@@ -2,7 +2,7 @@ import sys
 input = sys.stdin.readline
 
 n = int(input())
-arr = [int(n) for n in input().split()]
+arr = list(map, int(input().split()))
 visited = [False] * n
 
 cur_max = 0
