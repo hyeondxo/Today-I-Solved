@@ -24,7 +24,7 @@ def solve(start_city, current_city, cost, city_count):
         if not visited[next_city] and w[current_city][next_city] != 0:
             visited[next_city] = True
             solve(start_city, next_city, cost +
-                  w[current_city][next_city], city_count + 1)
+                  w[current_city][next_city], city_count + 1)  # 3
             visited[next_city] = False
 
 
