@@ -1,6 +1,13 @@
 import sys
 input = sys.stdin.readline
 
+n = int(input())
+a = list(map(int, input().split()))
+m = int(input())
+x = list(map(int, input().split()))
+
+a.sort()
+
 
 def binary_search(target):
     left = 0
@@ -19,11 +26,5 @@ def binary_search(target):
     return 0
 
 
-n = int(input())
-a = list(map(int, input().split()))
-m = int(input())
-a.sort()
-
-x = list(map(int, input().split()))
 for target in x:
     print(binary_search(target))
