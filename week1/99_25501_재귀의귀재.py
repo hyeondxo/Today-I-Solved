@@ -19,8 +19,9 @@ def isPalindrome(str):
 
 n = int(input())
 
-for i in range(n):
+for i in range(n):  # ?
     global count
     count = 0
 
     print(f"{isPalindrome(input().strip())} {count}")
+    print("test")

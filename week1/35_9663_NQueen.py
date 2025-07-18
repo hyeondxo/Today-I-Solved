@@ -25,3 +25,4 @@ check_down_right = [0 for _ in range(2 * n - 1)]
 
 solve(0)
 print(count)
+print(count)
