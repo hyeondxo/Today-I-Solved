@@ -3,7 +3,6 @@ input = sys.stdin.readline
 
 n = int(input())
 a = list(map(int, input().split()))
-sorted_a = sorted(a)
 result = []  # result 배열의 길이만큼의 수열 중에서 가장 작은 값들로만 유지
 
 
