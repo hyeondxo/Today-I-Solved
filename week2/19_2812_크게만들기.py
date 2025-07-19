@@ -8,9 +8,6 @@ stack = [arr[0]]
 x = []
 result = []
 
-# if k == 1:
-#     print(s)
-
 for i in range(1, n):
     if arr[i] > stack[-1]:
         while stack[-1] < arr[i]:
