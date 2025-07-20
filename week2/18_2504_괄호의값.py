@@ -1,8 +1,7 @@
-import math
 import sys
 input = sys.stdin.readline
 
-str = input().strip()
+input = input().strip()
 result = []
 
 
@@ -18,18 +17,22 @@ def find_until_close(find, val):
     while result:
         top = result.pop()
         if top == find:
-            if temp == 0:
-                result.append(val)
-            else:
-                result.append(temp * val)
-            break
+            # 여는 괄호 발견 → 누적값 처리 후 종료
+            # 안쪽에 값이 없으면 기본 값만 추가
+            # 값이 있으면 누적값 * 괄호값
+            result.append(val if temp == 0 else temp * val)
+            return
         elif isinstance(top, int):
+            # 괄호 안에서 발견된 숫자는 temp에 누적
             temp += top
         else:
+            # 닫는 괄호를 처리중인데 잘못된 여는 괄호가 발견됨
             invalid_string()
+    # 반복문 끝나고도 여는 괄호를 못찾았으면 잘못된 입력임
+    invalid_string()
 
 
-for command in str:
+for command in input:
     if command == "(":
         result.append("(")
     elif command == "[":
@@ -41,7 +44,8 @@ for command in str:
     else:
         invalid_string()
 
-for v in result:
+for v in result:  # 결과 스택에는 숫자만 남아있어야 함
     if not isinstance(v, int):
         invalid_string()
+
 print(sum(result))
