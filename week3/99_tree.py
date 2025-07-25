@@ -22,12 +22,12 @@ class Tree:
 
     def inorder(self, node):  # 중위 순회 : left -> root -> right
         if node:
-            self.preorder(self.nodes[node].left)
+            self.inorder(self.nodes[node].left)
             print(node, end="")
-            self.preorder(self.nodes[node].right)
+            self.inorder(self.nodes[node].right)
 
     def postorder(self, node):  # 후위 순회 : right -> left -> root
         if node:
-            self.preorder(self.nodes[node].left)
-            self.preorder(self.nodes[node].right)
+            self.postorder(self.nodes[node].left)
+            self.postorder(self.nodes[node].right)
             print(node, end="")
