@@ -14,8 +14,10 @@ def tsp(cur, visited):
     cost = float('inf')
     for next in range(n):
         if not visited & (1 << next) and w[cur][next] > 0:
-            next_cost = tsp(next, visited | (1 << next))
-            cost = min(cost, w[cur][next] + next_cost)
+            next_visited = visited | (1 << next)
+            next_cost = tsp(next, next_visited)
+            new_cost = w[cur][next] + next_cost
+            cost = min(cost, new_cost)
     
     dp[cur][visited] = cost
     return cost
